@@ -11,7 +11,7 @@ public class ObjectController : Base,IInteract
     private IObjectConvertable objectConvertable;
 
     [Title("Object Type Values")]
-    [SerializeField] public ObjectType ObjectType;
+    public ObjectType ObjectType;
 
     void Start()
     {
@@ -35,4 +35,8 @@ public class ObjectController : Base,IInteract
         }
     }
 
+    public void GetDestroying()
+    {
+        Destroy(GetComponent<PathFollower>());
+    }
 }

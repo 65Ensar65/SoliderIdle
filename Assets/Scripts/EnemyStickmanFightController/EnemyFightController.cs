@@ -83,13 +83,11 @@ public class EnemyFightController : Base,IInteract
         {
             case ObjectType.Sword:
                 StickmanHealth -= 4f;
-                e_swordSystem.GetReturnParticle();
                 action.Invoke(objectType, this.transform);
                 break;
             case ObjectType.Arrow:
                 StickmanHealth -= 20f;
                 e_objectPool.ReturnPoolObject(ObjectTag.Arrow, transform.gameObject);
-                e_swordSystem.GetReturnParticle();
                 action.Invoke(objectType, transform);
                 break;
             default:

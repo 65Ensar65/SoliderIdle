@@ -38,7 +38,7 @@ public class ArrowMasterController : Base
         MasterRequest.WoodRequestNumber, MasterRequest.IronRequestNumber, e_objectPool, 0, SpawnObjectRepeating, MasterRequest.IsWoodFree, MasterRequest.IsIronFree);
 
         arrowWorkable = new ArrowMasterWorkController();
-        arrowWorkable.SetArrowWorkParameters(MasterRequest, Wood, Iron, transform, e_collider, e_objectPool, WorkRepeating, Repeating, WorkSlider);
+        arrowWorkable.SetArrowWorkParameters(objectController, MasterRequest, Wood, Iron, transform, e_collider, e_objectPool, WorkRepeating, Repeating, WorkSlider);
 
         MasterRequest.WoodList.Clear();
         MasterRequest.IronList.Clear();
@@ -67,10 +67,10 @@ public class ArrowMasterController : Base
         switch (type)
         {
             case ObjectType.Iron:
-                arrowWorkable.GetArrowIronAddListController(type, objTransform, e_objectPool);
+                arrowWorkable.GetArrowIronAddListController(type, objTransform, e_objectPool,objectController);
                 break;
             case ObjectType.Wood:
-                arrowWorkable.GetArrowWoodAddListController(type, objTransform, e_objectPool);
+                arrowWorkable.GetArrowWoodAddListController(type, objTransform, e_objectPool,objectController);
                 break;
             default:
                 break;

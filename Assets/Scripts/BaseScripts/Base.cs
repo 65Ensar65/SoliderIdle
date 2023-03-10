@@ -18,6 +18,7 @@ public class Base : MonoBehaviour
     [HideInInspector] public StickmanFightController stickmanFight;
     [HideInInspector] public UpgradeController e_upgradeController;
     [HideInInspector] public SwordHitSystem e_swordSystem;
+    [HideInInspector] public ObjectController objectController;
     private void Awake()
     {
         Init();
@@ -39,5 +40,6 @@ public class Base : MonoBehaviour
         stickmanFight = (FindObjectOfType<StickmanFightController>()) ? FindObjectOfType<StickmanFightController>() : null;
         e_upgradeController = (FindObjectOfType<UpgradeController>()) ? FindObjectOfType<UpgradeController>() : null;
         e_swordSystem = (FindObjectOfType<SwordHitSystem>()) ? FindObjectOfType<SwordHitSystem>() : null;
+        objectController = (FindObjectOfType<ObjectController>()) ? FindObjectOfType<ObjectController>() : null;
     }
 }

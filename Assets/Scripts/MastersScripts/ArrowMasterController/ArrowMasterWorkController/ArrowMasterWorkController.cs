@@ -1,5 +1,8 @@
+using DG.Tweening;
+using PathCreation.Examples;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,15 +18,16 @@ public class ArrowMasterWorkController : IArrowWorkable
     private float workRepeating;
     private float repeating;
     private Image workSlider;
+    private ObjectController objectController;
 
     public void GetArrowWorkController()
     {
         if (woodList.Count == masterRequest.WoodRequestNumber && ironList.Count == masterRequest.IronRequestNumber && GameManager.Instance.SpawnIndex != GameManager.Instance.SpawnCapacity)
         {
+            masterCollider.enabled = false;
             repeating += Time.deltaTime;
             workSlider.fillAmount = repeating * .25f;
 
-            masterCollider.enabled = false;
 
             if (repeating > workRepeating)
             {
@@ -45,30 +49,42 @@ public class ArrowMasterWorkController : IArrowWorkable
         }
     }
 
-    public void GetArrowWoodAddListController(ObjectType objectType, Transform otherObj, ObjectPool objectPool)
+    public void GetArrowWoodAddListController( ObjectType objectType, Transform otherObj, ObjectPool objectPool, ObjectController objectController)
     {
         this.objectPool = objectPool;
         this.otherObj = otherObj;
+        this.objectController = objectController;
         if (woodList.Count < masterRequest.WoodRequestNumber)
         {
             woodList.Add(otherObj.gameObject);
-            objectPool.ReturnPoolObject(ObjectTag.Wood, otherObj.gameObject);
+            otherObj.GetComponent<ObjectController>().GetDestroying();
+
+            otherObj.transform.DOMove(masterPos.GetChild(5).position, .1f).OnComplete(delegate
+            {
+                objectPool.ReturnPoolObject(ObjectTag.Wood, otherObj.gameObject);
+            });
         }
     }
 
-    public void GetArrowIronAddListController(ObjectType objectType, Transform otherObj, ObjectPool objectPool)
+    public void GetArrowIronAddListController(ObjectType objectType, Transform otherObj, ObjectPool objectPool, ObjectController objectController)
     {
         this.otherObj = otherObj;
         this.objectPool = objectPool;
+        this.objectController = objectController;
 
         if (ironList.Count < masterRequest.IronRequestNumber)
         {
             ironList.Add(otherObj.gameObject);
-            objectPool.ReturnPoolObject(ObjectTag.Iron, otherObj.gameObject);
+            otherObj.GetComponent<ObjectController>().GetDestroying();
+            otherObj.transform.DOMove(masterPos.GetChild(5).position, .1f).OnComplete(delegate
+            {
+                objectPool.ReturnPoolObject(ObjectTag.Iron, otherObj.gameObject);
+            });
         }
     }
-    public void SetArrowWorkParameters(MasterRequestSystem masterRequest, List<GameObject> woodList, List<GameObject> ironList, Transform masterPos, Collider masterCollider, ObjectPool objectPool, float workRepeating, float repeating, Image workSlider)
+    public void SetArrowWorkParameters(ObjectController objectController, MasterRequestSystem masterRequest, List<GameObject> woodList, List<GameObject> ironList, Transform masterPos, Collider masterCollider, ObjectPool objectPool, float workRepeating, float repeating, Image workSlider)
     {
+        this.objectController = objectController;
         this.masterRequest = masterRequest;
         this.woodList = woodList;
         this.ironList = ironList;

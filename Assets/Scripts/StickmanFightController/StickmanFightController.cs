@@ -21,6 +21,9 @@ public class StickmanFightController : Base
     [Title("Stickman Health System")]
     public float StickmanHealth;
 
+    [Title("Stickman Ragdoll System")]
+    public Rigidbody[] RagdollRigidbody = new Rigidbody[15];
+
     void Start()
     {
         arrowFightable = new ArrowFightSystem();
@@ -61,6 +64,11 @@ public class StickmanFightController : Base
 
         if (StickmanHealth <= 0)
         {
+            for (int i = 0; i < RagdollRigidbody.Length; i++)
+            {
+                RagdollRigidbody[i].GetComponent<Rigidbody>();
+                RagdollRigidbody[i].isKinematic = false;
+            }
             healthtable.GetHealthController();
             InvokeRepeating(nameof(GetDeadController), 5,1);
         }

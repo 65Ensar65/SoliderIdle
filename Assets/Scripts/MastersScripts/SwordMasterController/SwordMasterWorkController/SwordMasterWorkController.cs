@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -71,8 +72,13 @@ public class SwordMasterWorkController : ISwordWorkable
         this.otherObj = otherObj;
         if (woodList.Count < masterRequest.WoodRequestNumber)
         {
-            woodList.Add(otherObj.gameObject);
-            objectPool.ReturnPoolObject(ObjectTag.Wood, otherObj.gameObject);
+            otherObj.GetComponent<ObjectController>().GetDestroying();
+
+            otherObj.transform.DOMove(masterPos.GetChild(5).position, .1f).OnComplete(delegate
+            {
+                objectPool.ReturnPoolObject(ObjectTag.Wood, otherObj.gameObject);
+                woodList.Add(otherObj.gameObject);
+            });
         }
     }
 
@@ -83,8 +89,12 @@ public class SwordMasterWorkController : ISwordWorkable
 
         if (ironList.Count < masterRequest.IronRequestNumber)
         {
-            ironList.Add(otherObj.gameObject);
-            objectPool.ReturnPoolObject(ObjectTag.Iron, otherObj.gameObject);
+            otherObj.GetComponent<ObjectController>().GetDestroying();
+            otherObj.transform.DOMove(masterPos.GetChild(5).position, .1f).OnComplete(delegate
+            {
+                objectPool.ReturnPoolObject(ObjectTag.Iron, otherObj.gameObject);
+                ironList.Add(otherObj.gameObject);
+            });
         }
     }
     public void SetSwordWorkParameters(SwordMasterController masterController, MasterRequestSystem masterRequest, List<GameObject> woodList, List<GameObject> ironList, Transform masterPos, Collider masterCollider, ObjectPool objectPool, float workRepeating, float repeating, Image workSlider, UpgradeController upgradeController)

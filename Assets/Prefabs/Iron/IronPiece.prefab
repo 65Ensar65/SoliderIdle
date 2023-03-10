@@ -98,8 +98,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1051182, y: 0.9815563, z: 0.90757924}
-  m_Center: {x: -0.06649365, y: -0.017632054, z: -0.035374157}
+  m_Size: {x: 0.63974494, y: 0.81289613, z: 0.4211975}
+  m_Center: {x: -0.09015503, y: -0.10196217, z: 0.06316796}
 --- !u!54 &3165438093090951917
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -140,6 +140,8 @@ MonoBehaviour:
   swordMaster: {fileID: 0}
   arrowMaster: {fileID: 0}
   stickmanFight: {fileID: 0}
+  e_upgradeController: {fileID: 0}
+  e_swordSystem: {fileID: 0}
   ObjectType: 5
 --- !u!114 &-1451914752614913364
 MonoBehaviour:
