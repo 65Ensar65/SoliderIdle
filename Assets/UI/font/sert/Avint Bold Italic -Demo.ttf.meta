@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 3e594b8b860c7a4488fc63d4b83e5c10
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Avint Bold
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0c58cac7cb327224197a9256d490d742, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

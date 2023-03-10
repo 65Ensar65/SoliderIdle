@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 9a5d2b5a052949246a15b648f90e6345
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Avint Regular
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 79d0043dd8d6dad4d8d1d95256f1f282, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

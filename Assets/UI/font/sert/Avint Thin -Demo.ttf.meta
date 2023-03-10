@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 4e103de63c25bb44395d4c2d9fb99511
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Avint Thin
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 751c92f44254e9441a70a43f21c6a46f, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

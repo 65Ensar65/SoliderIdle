@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 3d0084f718712d34f8bbb4f290a86be7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - aremat font
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9bbd62b4f9549c74798b5ee777e46d01, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
