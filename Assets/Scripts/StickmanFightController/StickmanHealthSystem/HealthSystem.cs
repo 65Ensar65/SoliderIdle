@@ -10,8 +10,8 @@ public class HealthSystem : IHealthtable
     private ObjectTag objectTag;
     public void GetHealthController()
     {
-        soliderPos.PlayAnim((int)PlayerAnim.FALL);
-       //soliderPos.GetComponent<Animator>().enabled = false;
+       //soliderPos.PlayAnim((int)PlayerAnim.FALL);
+       soliderPos.GetComponent<Animator>().enabled = false;
     }
 
     public void SetHealthParameters(Transform soliderPos, ObjectPool objectPool, ObjectTag objectTag)

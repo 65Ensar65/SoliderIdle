@@ -62,6 +62,7 @@ public class MastersSystem : Base
 
             GameManager.Instance.IsSpawn = false;
             GameManager.Instance.Masters.SetActive(false);
+            GameManager.Instance.LevelText.SetActive(false);
         }
     }
 }

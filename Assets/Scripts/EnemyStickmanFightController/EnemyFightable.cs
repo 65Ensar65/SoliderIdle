@@ -12,5 +12,5 @@ public interface IEnemyArrowFightable
 public interface IEnemySwordFightable
 {
     void GetEnemySwordController();
-    void SetEnemySwordControllerParameters(StickmanController stickmanController,Transform objPos, Transform warPoint, float rushSpeed);
+    void SetEnemySwordControllerParameters(StickmanController stickmanController,Transform objPos, Transform warPoint, float rushSpeed, float warPos);
 }

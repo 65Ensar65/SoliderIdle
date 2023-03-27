@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class StickmanController : Base
 {
-    [HideInInspector] public IStickmanActivelable stickmanActivelable;
-    [HideInInspector] public Transform StickmanHand;
+    public IStickmanActivelable stickmanActivelable;
+    public Transform StickmanHand;
 
     [Title("Stickman Pos Values")]
-    [SerializeField] public List<Transform> Stickmans = new List<Transform>();
+    public List<Transform> Stickmans = new List<Transform>();
     [SerializeField] Transform[] StickmanPosPoints = new Transform[100];
-    [SerializeField] public int PosIndex;
+    public int PosIndex;
     void Start()
     {
         stickmanActivelable = new StickmanActiveController();

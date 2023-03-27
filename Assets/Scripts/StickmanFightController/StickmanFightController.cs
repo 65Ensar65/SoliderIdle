@@ -69,15 +69,14 @@ public class StickmanFightController : Base
                 RagdollRigidbody[i].GetComponent<Rigidbody>();
                 RagdollRigidbody[i].isKinematic = false;
             }
+            e_stickmanActive.Stickmans.Remove(transform);
             healthtable.GetHealthController();
-            InvokeRepeating(nameof(GetDeadController), 5,1);
         }
-    }
 
-    void GetDeadController()
-    {
-        e_objectPool.ReturnPoolObject(ObjectTag.Stickman, gameObject);
-        e_stickmanActive.Stickmans.Remove(transform);
+        if (GameManager.Instance.EnemyList.Count <= 0)
+        {
+            GameManager.Instance.IsFight = false;
+        }
     }
     void GetSelectFunch(ObjectType objectType, Transform transform)
     {
@@ -85,7 +84,7 @@ public class StickmanFightController : Base
         {
             case ObjectType.EnemySword:
                 Debug.Log("EnemySwordHit");
-                StickmanHealth -= 4;
+                StickmanHealth -= 5;
                 break;
             case ObjectType.EnemyArrow:
                 e_objectPool.ReturnPoolObject(ObjectTag.EnemyMisilline, transform.gameObject);

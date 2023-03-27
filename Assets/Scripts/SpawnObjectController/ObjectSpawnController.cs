@@ -10,8 +10,8 @@ public class ObjectSpawnController : Base
     [HideInInspector] public IObjectSpawnable ironSpawnable;
 
     [Title("Iron Spawn Values")]
-    [SerializeField] public float Repeating;
-    [SerializeField] public float RepeatingTime;
+    public float Repeating;
+    public float RepeatingTime;
     void Start()
     {
         ironSpawnable = new ObjectSpawn();

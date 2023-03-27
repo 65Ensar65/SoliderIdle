@@ -9,7 +9,7 @@ using System.Reflection;
 
 public class FinishController : Base,IInteract
 {
-    [SerializeField] public IFinishStackable finishStackable;
+    public IFinishStackable finishStackable;
     private ObjectType objectType = ObjectType.TableFinish;
 
     public void GetInteractController(ObjectType type, Transform objTransform, Action<ObjectType, Transform> action)

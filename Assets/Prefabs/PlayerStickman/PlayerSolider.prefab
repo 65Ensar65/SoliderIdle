@@ -107,7 +107,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328993154373872979}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.0007470482
   m_Height: 0.0029881927
@@ -349,7 +349,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830106459340731748}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.003260022
@@ -905,7 +905,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2993011357495352155}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.0006958413
   m_Height: 0.002319471
@@ -1016,7 +1016,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3161975898808990819}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.0004911784
   m_Height: 0.0019647137
@@ -1263,10 +1263,10 @@ MonoBehaviour:
   e_upgradeController: {fileID: 0}
   e_swordSystem: {fileID: 0}
   objectController: {fileID: 0}
-  RepeatingTime: 2
+  RepeatingTime: 0.5
   Repeating: 0
   StickmanHand: {fileID: 4106074482375871232}
-  rushSpeed: 3
+  rushSpeed: 1
   StickmanHealth: 100
   RagdollRigidbody:
   - {fileID: 8157783158566000964}
@@ -1355,7 +1355,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3646471565957021620}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.0009680413
   m_Height: 0.0048402064
@@ -2092,7 +2092,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4877848862992111183}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.00041263283
   m_Height: 0.0016505313
@@ -3040,7 +3040,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6944705163521191507}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.0038817988, y: 0.0034091321, z: 0.0025465097}
@@ -3328,7 +3328,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7292143695575199297}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.0006975228
   m_Height: 0.002325076
@@ -3502,7 +3502,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7469096147602747301}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.00016311904
   m_Height: 0.00081559515
@@ -3613,7 +3613,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8075299828176825517}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.00041218157
   m_Height: 0.0016487263

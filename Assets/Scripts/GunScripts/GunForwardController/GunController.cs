@@ -10,10 +10,10 @@ public class GunController : Base
     private IWeaponizinglable weaponizinglable;
 
     private bool IsFree = true;
-    [SerializeField] public ObjectType GunType;
+    public ObjectType GunType;
 
     [Title("Sword Forward Speed")]
-    [SerializeField] public GunScriptible SwordScriptible;
+    public GunScriptible SwordScriptible;
     void Start()
     {
         swordForwardable = new GunForwardController();

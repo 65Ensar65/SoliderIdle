@@ -9,6 +9,7 @@ public class EnemySwordSystem : IEnemySwordFightable
     private Transform soliderPos;
     private Transform warPoint;
     private float rushSpeed;
+    private float warPos;
     public void GetEnemySwordController()
     {
         var enemysoliderPos = warPoint;
@@ -18,7 +19,7 @@ public class EnemySwordSystem : IEnemySwordFightable
 
         var magniPos = soliderPos.position - enemysoliderPos.position;
 
-        if (magniPos.magnitude < 1f)
+        if (magniPos.magnitude < 1)
         {
             soliderPos.transform.PlayAnim((int)PlayerAnim.SWORDSHOOT);
             rushSpeed = 0;
@@ -26,11 +27,12 @@ public class EnemySwordSystem : IEnemySwordFightable
 
     }
 
-    public void SetEnemySwordControllerParameters(StickmanController stickmanController,Transform objPos, Transform warPoint, float rushSpeed)
+    public void SetEnemySwordControllerParameters(StickmanController stickmanController,Transform objPos, Transform warPoint, float rushSpeed, float warPos)
     {
         this.stickmanController = stickmanController;
         this.soliderPos = objPos;
         this.warPoint = warPoint;
         this.rushSpeed = rushSpeed;
+        this.warPos = warPos;
     }
 }

@@ -11,6 +11,7 @@ public class GameManager : BaseSingleton<GameManager>
     public int PosIndex;
     public bool IsFree;
     public StickmanController StickmanActiveControllers;
+    public GameObject LevelText;
 
     [Title("Grand Total Money Values")]
     public TextMeshProUGUI MoneyText;

@@ -17,16 +17,20 @@ public class EnemyFightController : Base,IInteract
     public float RepeatingTime;
     public float Repeating;
     public float rushSpeed;
+    public float WarPos;
+    public float RushTime;
+    public float RushRepeatingTime;
 
     [Title("Stickman Health System")]
     public float StickmanHealth;
+    public Rigidbody[] RagdollRigibody;
     void Start()
     {
         enemyArrow = new EnemyArrowSystem();
         enemyArrow.SetEnemyArrowFightParameters(GameManager.Instance.WarPoint, transform, e_stickmanActive, e_objectPool, RepeatingTime, Repeating);
 
         enemySword = new EnemySwordSystem();
-        enemySword.SetEnemySwordControllerParameters(e_stickmanActive, transform, GameManager.Instance.WarPoint, rushSpeed);
+        enemySword.SetEnemySwordControllerParameters(e_stickmanActive, transform, GameManager.Instance.WarPoint, rushSpeed,WarPos);
 
         healthtable = new HealthSystem();
         healthtable.SetHealthParameters(transform, e_objectPool, ObjectTag.Stickman);
@@ -38,16 +42,31 @@ public class EnemyFightController : Base,IInteract
 
         if (StickmanHealth <= 0)
         {
-            transform.PlayAnim((int)EnemyAnim.FALL);
-            InvokeRepeating(nameof(GetDeadController), 5, 5);
+            GameManager.Instance.EnemyList.Remove(transform);
+            GetComponent<CapsuleCollider>().enabled = false;
+
+            for (int i = 0; i < RagdollRigibody.Length; i++)
+            {
+                RagdollRigibody[i].GetComponent<Rigidbody>();
+                RagdollRigibody[i].isKinematic = false;
+            }
+            e_animator.enabled = false;
+            //transform.PlayAnim((int)EnemyAnim.FALL);
         }
-    }
 
-    void GetDeadController()
-    {
 
-        GameManager.Instance.EnemyList.Remove(transform);
-        Destroy(gameObject);
+        if (e_stickmanActive.Stickmans.Count <= 0)
+        {
+            GameManager.Instance.IsFight = false;
+        }
+
+        RushTime += Time.deltaTime;
+
+        if (RushTime >= RushRepeatingTime)
+        {
+            RushTime = 0;
+            WarPos -= 0.1f;
+        }
     }
 
     void GetFightController()
@@ -82,11 +101,11 @@ public class EnemyFightController : Base,IInteract
         switch (type)
         {
             case ObjectType.Sword:
-                StickmanHealth -= 4f;
+                StickmanHealth -= 6f;
                 action.Invoke(objectType, this.transform);
                 break;
             case ObjectType.Arrow:
-                StickmanHealth -= 20f;
+                StickmanHealth -= 10f;
                 e_objectPool.ReturnPoolObject(ObjectTag.Arrow, transform.gameObject);
                 action.Invoke(objectType, transform);
                 break;
